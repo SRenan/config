@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/etc/X11'
+let g:netrw_dirhist_2='/home/rsautera/workspace/BioC/PICS/man'
+let g:netrw_dirhist_3='/home/rsautera/workspace/BioC/PICS'
+let g:netrw_dirhist_4='/home/rsautera/workspace/others/PE_original/PINGPE/R'
+let g:netrw_dirhist_5='/home/rsautera/workspace/git/rglabwww/utils'
+let g:netrw_dirhist_6='/home/rsautera/workspace/BioC/PING'

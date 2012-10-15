@@ -1,0 +1,13 @@
+#This contains all the files that should be ignored whenever I commit
+
+# Compiled C sources #
+*.o
+*.so
+
+# R packages vignettes residues
+*.sty
+*.aux
+*.log
+*.out
+*.tex
+*.toc

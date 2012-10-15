@@ -1,0 +1,6 @@
+[user]
+	name = SRenan
+	email = renan.sauteraud@gmail.com
+[core]
+	editor = vim
+	excludesfile = /home/rsautera/.gitignore_global

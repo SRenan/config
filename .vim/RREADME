@@ -1,0 +1,7 @@
+List of plugins:
+
+- comments.vim
+    Adds an easy way to comment code with ctrl+c uncomment with ctrl+x
+    Works in normal and visual mode
+
+
