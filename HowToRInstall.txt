@@ -2,12 +2,16 @@ System libraries:
 -----------------
 gfortran
 g++
-readline-common
+readline (libreadline-dev)
 xorg-dev
-openGL
-xml2 (libxml2)
+openGL (freeglut3-dev) (?)
+xml2 (libxml2-dev)
 tcl-tk (tcl-dev & tk-dev)
 java (openjdk-7-jre & openjdk-7-jdk ?)
+
+texinfo
+texlive-latex-base
+texlive-fonts-extra (These 3 prevent doc/vignette related WARNING in configuration)
 
 (libblas and stuff?)
 
@@ -52,32 +56,38 @@ Warning: this is not even the latest stable version
 
 
 
+#Ex on rsautera-fhcrc:
+----------------------
+cd Programs
+mkdir Rdevel
+cd Rdevel
+svn checkout https://svn.r-project.org/R/trunk/ trunk
+cd trunk
+./tools/rsync/recommended
+cd ..
+mkdir install
+cd ~/Programs/Rdevel/install/
+../trunk/configure CC="gcc -m64" CXX="g++ -m64" F77="gfortran -m64" FC="gfortran -m64" OBJC="gcc -m64" LDFLAGS="-L/usr/local/lib64" LIBnn=lib64 --enable-R-shlib --with-tcltk=yes --with-tcl-config=/usr/lib/tcl8.5/tclConfig.sh --with-tk-config=/usr/lib/tk8.5/tkConfig.sh --prefix=/home/rsautera/Programs/Rdevel/install/
 
-###################################################
-To reinstall all packages easily, it is possible to copy paste the ./library folder.
-Loading a package with Ccode will fail, then biocLite any of the packages and accept the update of the other packages
-###################################################
 
+#Config result (from rsautera-fhcrc):
+-------------------------------------
+R is now configured for x86_64-unknown-linux-gnu
 
-#Config result (here 32bits):
------------------------------
-R is now configured for i686-pc-linux-gnu
+  Source directory:          ../trunk
+  Installation directory:    /home/rsautera/Programs/Rdevel/install
 
-  Source directory:          ./trunk
-  Installation directory:    /home/rsautera/Programs/Rdevel
+  C compiler:                gcc -m64 -std=gnu99  -g -O2
+  Fortran 77 compiler:       gfortran -m64  -g -O2
 
-  C compiler:                gcc -std=gnu99  -g -O2
-  Fortran 77 compiler:       gfortran  -g -O2
-
-  C++ compiler:              g++  -g -O2
-  Fortran 90/95 compiler:    gfortran -g -O2
-  Obj-C compiler:	      
+  C++ compiler:              g++ -m64  -g -O2
+  Fortran 90/95 compiler:    gfortran -m64 -g -O2
+  Obj-C compiler:	     gcc -m64 
 
   Interfaces supported:      X11, tcltk
   External libraries:        readline
-  Additional capabilities:   PNG, JPEG, NLS
+  Additional capabilities:   NLS
   Options enabled:           shared R library, shared BLAS, R profiling, Java
 
   Recommended packages:      yes
-
 
