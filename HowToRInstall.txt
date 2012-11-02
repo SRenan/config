@@ -1,19 +1,22 @@
 System libraries:
 -----------------
-gfortran
-g++
-readline (libreadline-dev)
-xorg-dev
-openGL (freeglut3-dev) (?)
-xml2 (libxml2-dev)
-tcl-tk (tcl-dev & tk-dev)
-java (openjdk-7-jre & openjdk-7-jdk ?)
-
-texinfo
-texlive-latex-base
-texlive-fonts-extra (These 3 prevent doc/vignette related WARNING in configuration)
-
-(libblas and stuff?)
+Library:		For:
+--------		----
+gfortran		Fortran compiler
+g++			C++ compiler
+gcc			C compiler
+libreadline-dev		readline
+xorg-dev		X11
+freeglut3-dev		opengl
+libxml2-dev		xml2
+tcl-dev			
+tk-dev			tcl-tk
+openjdk-7-jre		
+openjdk-7-jdk		java
+texlive-full		Latex + fonts
+libgsl0-dev		gsl
+libcurl4-openssl-dev 	libcurl for RCurl
+libcairo22-dev		Cairo
 
 Download:
 ---------
@@ -42,9 +45,14 @@ R CMD javareconf
 Add library(BiocInstaller) in Rdevel/etc/Rprofile.site
 
 Install CRAN packages that are gonna be needed sooner or later:
-XML,
+XML, RCurl
 
 Set .bashrc alias
+
+To get eclipse/statET:
+----------------------
+#in R
+install.packages(c("rj", "rj.gd"), repos="http://download.walware.de/rj-1.1")
 
 
 ####################################################
@@ -68,6 +76,11 @@ cd ..
 mkdir install
 cd ~/Programs/Rdevel/install/
 ../trunk/configure CC="gcc -m64" CXX="g++ -m64" F77="gfortran -m64" FC="gfortran -m64" OBJC="gcc -m64" LDFLAGS="-L/usr/local/lib64" LIBnn=lib64 --enable-R-shlib --with-tcltk=yes --with-tcl-config=/usr/lib/tcl8.5/tclConfig.sh --with-tk-config=/usr/lib/tk8.5/tkConfig.sh --prefix=/home/rsautera/Programs/Rdevel/install/
+make
+make install
+make clean
+#set alias
+R CMD javareconf
 
 
 #Config result (from rsautera-fhcrc):
