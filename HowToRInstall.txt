@@ -21,14 +21,15 @@ libcairo22-dev		Cairo
 Download:
 ---------
 svn checkout https://svn.r-project.org/R/trunk/ trunk
+                                                dest_folder
 
 Config:
 -------
-./tools/rsync-recommended
+./trunk/tools/rsync-recommended
 
 
 ./configure CC="gcc -m64" CXX="g++ -m64" F77="gfortran -m64" FC="gfortran -m64" OBJC="gcc -m64" LDFLAGS="-L/usr/local/lib64" LIBnn=lib64 --enable-R-shlib --with-tcltk=yes --with-tcl-config=/usr/lib/tcl8.5/tclConfig.sh --with-tk-config=/usr/lib/tk8.5/tkConfig.sh
-#Add --prefix=</absolute_custom_path> for custom location
+#Add --prefix=</absolute_custom_path/> for custom location
 
 #FOR 32bits systems
 #./configure CC="gcc" CXX="g++" F77="gfortran" FC="gfortran" OBJC="gcc" --enable-R-shlib --with-tcltk=yes --with-tcl-config=/usr/lib/tcl8.5/tclConfig.sh --with-tk-config=/usr/lib/tk8.5/tkConfig.sh
@@ -70,37 +71,27 @@ cd Programs
 mkdir Rdevel
 cd Rdevel
 svn checkout https://svn.r-project.org/R/trunk/ trunk
-cd trunk
-./tools/rsync/recommended
-cd ..
-mkdir install
-cd ~/Programs/Rdevel/install/
-../trunk/configure CC="gcc -m64" CXX="g++ -m64" F77="gfortran -m64" FC="gfortran -m64" OBJC="gcc -m64" LDFLAGS="-L/usr/local/lib64" LIBnn=lib64 --enable-R-shlib --with-tcltk=yes --with-tcl-config=/usr/lib/tcl8.5/tclConfig.sh --with-tk-config=/usr/lib/tk8.5/tkConfig.sh --prefix=/home/rsautera/Programs/Rdevel/install/
-make
-make install
-make clean
-#set alias
-R CMD javareconf
+./trunk/tools/rsync-recommended
 
+./trunk/configure CC="gcc -m64" CXX="g++ -m64" F77="gfortran -m64" FC="gfortran -m64" OBJC="gcc -m64" LIBnn=lib64 --with-tcltk=yes --with-tcl-config=/usr/lib/tcl8.5/tclConfig.sh --with-tk-config=/usr/lib/tk8.5/tkConfig.sh --enable-R-shlib LDFLAGS="-L/usr/local/lib64" --prefix=/home/rsautera/Programs/Rdevel/install/
 
-#Config result (from rsautera-fhcrc):
--------------------------------------
-R is now configured for x86_64-unknown-linux-gnu
+#R is now configured for x86_64-unknown-linux-gnu
+#
+#  Source directory:          ./trunk
+#  Installation directory:    /home/rsautera/Programs/Rdevel/install
+#
+#  C compiler:                gcc -m64 -std=gnu99  -g -O2
+#  Fortran 77 compiler:       gfortran -m64  -g -O2
+#
+#  C++ compiler:              g++ -m64  -g -O2
+#  Fortran 90/95 compiler:    gfortran -m64 -g -O2
+#  Obj-C compiler:	     gcc -m64 
+#
+#  Interfaces supported:      X11, tcltk
+#  External libraries:        readline
+#  Additional capabilities:   PNG, NLS, cairo
+#  Options enabled:           shared R library, shared BLAS, R profiling, Java
+#
+#  Recommended packages:      yes
 
-  Source directory:          ../trunk
-  Installation directory:    /home/rsautera/Programs/Rdevel/install
-
-  C compiler:                gcc -m64 -std=gnu99  -g -O2
-  Fortran 77 compiler:       gfortran -m64  -g -O2
-
-  C++ compiler:              g++ -m64  -g -O2
-  Fortran 90/95 compiler:    gfortran -m64 -g -O2
-  Obj-C compiler:	     gcc -m64 
-
-  Interfaces supported:      X11, tcltk
-  External libraries:        readline
-  Additional capabilities:   NLS
-  Options enabled:           shared R library, shared BLAS, R profiling, Java
-
-  Recommended packages:      yes
 
