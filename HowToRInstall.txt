@@ -74,6 +74,7 @@ svn checkout https://svn.r-project.org/R/trunk/ trunk
 ./trunk/tools/rsync-recommended
 
 ./trunk/configure CC="gcc -m64" CXX="g++ -m64" F77="gfortran -m64" FC="gfortran -m64" OBJC="gcc -m64" LIBnn=lib64 --with-tcltk=yes --with-tcl-config=/usr/lib/tcl8.5/tclConfig.sh --with-tk-config=/usr/lib/tk8.5/tkConfig.sh --enable-R-shlib LDFLAGS="-L/usr/local/lib64" --prefix=/home/rsautera/Programs/Rdevel/install/
+./configure CC="gcc -m64" CXX="g++ -m64" F77="gfortran -m64" FC="gfortran -m64" OBJC="gcc -m64" LIBnn=lib64 --with-tcltk=yes --with-tcl-config=/usr/lib/tcl8.5/tclConfig.sh --with-tk-config=/usr/lib/tk8.5/tkConfig.sh --enable-R-shlib --prefix=/home/rsautera/Programs/Rdevel/
 
 #R is now configured for x86_64-unknown-linux-gnu
 #
