@@ -1,12 +1,8 @@
-#Rprofile.site
-
-.First <- function(){
- cat("\nBonjour at", date(), "\n")
- source('http://bioconductor.org/biocLite.R') 
- library(devtools)
-}
-
-
-.Last <- function(){
- cat("\nGoodbye at ", date(), "\n")
+if(interactive()){
+  .First <- function(){
+    source("http://bioconductor.org/biocLite.R")
+    options(repos=structure(c(CRAN="http://cran.fhcrc.org/")))
+    mat <- matrix(1:12, ncol=4)
+    library(devtools)
+  }
 }
