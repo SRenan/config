@@ -1,0 +1,72 @@
+## FUNCTIONS
+#' A title
+#' 
+#' A description
+#' 
+#' @param param1 A \code{class}. A description of the parameter,
+#' its use, the values it can take.
+#' @param param2 ...
+#' @param param3 ...
+#'
+#' @details
+#' Details regarding the arguments of the function, the requirements
+#' for this function to work (required columns in input files, 
+#' architecture offile tree..).
+#'
+#' @return A \code{class} with a descritpion of what it contains
+#' depending on the input parameters.
+#'
+#' @author Author One, Author Two
+#'
+#' @seealso \code{\link{anotherFunction}}, \code{\link{aClass}},
+#' \code{link{aMethod}}
+#'
+#' @examples
+#' #A first example
+#' res <- thefunction(param1 = 12, param2 = NULL, param3 = "FDR")
+#'
+#' #A second example
+#' res2 <- thefunction(param1 = 12, param2 = NULL, param3 = "absolute")
+#'
+#' @export
+#' @importFrom package1 function1 function2
+#' @importClassesFrom package1 class1
+
+To have multiple functions in the same file:
+ Document the first function as described above + add @param for the parameters
+ of the second function + specify @rdname filename.
+ In the second function:
+	#' @rdname filename
+	#' @export
+ usage section gets created autiomatically for both functions in the same file.
+
+
+## CLASSES
+#' classname class
+#' 
+#' Description of the class, its purpose
+#' 
+#' @section Slots:
+#' \describe{
+#'  \item{featureRange}{A \code{RangedData object}. The ranges and sequences of 
+#' the peptides and their associated annotation.}
+#'  \item{phenoData}{An \code{AnnotatedDataFrame}. Annotation for the samples.}
+#'  \item{assayData}{}
+#'  \item{featureData}{}
+#'  \item{annotation}{}
+#'  \item{protocolData}{Slots inherited from \code{ExpressionSet}.}
+#' }
+#'
+#' @details
+#' See \code{?`peptideSet-methods`} for a list of accessors and method associated
+#' with the class.
+#'
+#' @seealso \code{\link{ExpressionSet}}, \code{\link{peptideSet-methods}}
+#'
+#' @importClassesFrom Biobase ExpressionSet
+#' @importClassesFrom IRanges RangedData
+#' @aliases -class
+#' @exportClass peptideSet
+#' @author First Last 
+#' 
+
