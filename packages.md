@@ -15,8 +15,3 @@
 - Gviz
 - limma
 
-## Hadley
-- devtools
-- ggplot2
-- reshape2
-
