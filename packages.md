@@ -1,6 +1,11 @@
 ## Tools
 - data.table
 - Rcpp
+- knitr
+- devtools
+- reshape2
+- ggplot2
+- roxygen2
 
 ## Bioc
 
@@ -10,7 +15,7 @@
 - Gviz
 - limma
 
-# Hadley
+## Hadley
 - devtools
 - ggplot2
 - reshape2
